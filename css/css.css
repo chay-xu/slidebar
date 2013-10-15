@@ -1,0 +1,151 @@
+.slide{
+	padding: 50px;
+}
+.ui-clearfix:after{
+	clear: both;
+	height: 0;
+	display: block;
+	visibility: hidden;
+	content: " ";
+	font-size: 0;
+}
+.ui-float{
+	float: left;
+	margin: 10px 50px;
+}
+.sliderBar{
+	border: 1px solid #B7B7B7;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: relative;
+}
+.sliderBar-shadow{
+	box-shadow: 2px 2px 2px #B7B7B7 inset;
+}
+.slider-horizontal{
+	height: 8px;
+	width: 260px;
+}
+.slider-vertical{
+	height: 200px;
+	width: 8px;
+}
+.barBtn{
+	background-color: #389AFF;
+	border: 1px solid #38A8FF;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: absolute;
+	background-image: linear-gradient(top,#7BC6FF,#1A7DE3);
+	background-image: -webkit-linear-gradient(top,#7BC6FF,#1A7DE3);
+	background-image: -moz-linear-gradient(top,#7BC6FF,#1A7DE3);
+	background-image: -o-linear-gradient(top,#7BC6FF,#1A7DE3);
+	cursor: pointer;
+	/*cursor: default;*/
+	opacity: 0.9;
+	display: block;
+	outline: none;
+	-webkit-user-select:none;
+}
+.barBtn-outside{
+	margin-left: -10px;
+	box-shadow: 2px 2px 2px #B7B7B7;
+}
+.barBtn-inside{
+	height: 14px; 
+	width: 46px;
+	top: 0; 
+	margin-right: -23px;
+}
+.barBtn-corner-small{
+	border-radius: 4px;
+}
+.barBtn-corner-large{
+	border-radius: 10px;
+}
+.barBtn-corner-middle{
+	border-radius: 6px;
+}
+.barBtn-horizontal{
+	height: 1.2em; 
+	width: 1.2em; 
+	top: -8px;
+	left:0px;
+}
+.barBtn-vertical{
+	height: 1.2em; 
+	width: 1.2em; 
+	bottom: -8px;
+	left: 3px;
+	/*margin-bottom: -10px;*/
+}
+.slide2{
+	padding: 20px;
+}
+.sildebar2{
+	box-shadow: 5px 5px 8px #DADADA inset;
+	border: 1px solid #C5C5C5;
+	border-radius: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 16px;
+	width: 300px;
+	position: relative;
+	padding: 1px;
+}
+.tooltips-pointer{
+	border: 8px dashed transparent;
+	border-right: 8px solid #c5dbec;
+	top: 50%;
+	left: -16px;
+	margin-top: -8px;
+}
+.tooltips-pointer-inner{
+	border: 8px dashed transparent;
+	border-right: 8px solid #fff;
+	margin: -8px 0 0 -6px;
+	/*bottom: -8px;
+	left: -5px;*/
+}	
+.tooltips-pointer,.tooltips-pointer .tooltips-pointer-inner{
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	background: none;
+}
+.ttContent{
+	display: block;
+	text-align: center;
+}
+.tooltip{
+	position:absolute;
+	left:25px;
+	border: 1px solid #a6c9e2;
+	width:50px;
+	height:20px;
+	margin-bottom: -12px;
+	display: none;
+}
+.scroll{
+	margin: 50px;
+	position: relative;
+	height: 200px;
+	width: 600px;
+	border: 1px solid #000000;
+	overflow: hidden;
+}
+.scrollbar{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.scroll-height{
+	height: 200px;
+	width: 15px;
+}
+.scrollBtn{
+	height: 44px; 
+	width: 13px; 
+	/*margin-bottom: -22px;*/
+}
