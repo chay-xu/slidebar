@@ -1,4 +1,13 @@
-﻿(function($){
+﻿/**
+*@fileoverview: jquery the slider bar
+*@date: 2013-7-30
+*@version 
+*@author: xu
+*@param {object}
+*@return {this}
+**/
+
+(function($){
 		$.fn.slideBar = function(options){
 			var init = $.extend({
 				// btnID: "sliderControl", //滑动按钮
@@ -18,6 +27,7 @@
 				onMoveFun: null,		//移动时执行函数
 				onSlideFun: null		//时执行函数
 			}, options);
+
 			// for (i in options) this.options[i] = options[i];
 			var btn = $(this).find("a"),
 			shade, tip, offSeat = 0,
@@ -169,6 +179,10 @@
 			// return method.call(this);
 		}
 	})(jQuery);
+
+
+
+	//examles
 	var sb1 = $("#sildebar").slideBar({ //你的sb
 		startVal: 15,			//初始值
 		maxVal: 50,             //最大值
