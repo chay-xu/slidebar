@@ -1,32 +1,32 @@
-(function($){
+ï»¿(function($){
 		$.fn.slideBar = function(options){
 			var init = $.extend({
-				// btnID: "sliderControl", //»¬¶¯°´Å¥
-				// rangeID: "sliderControl", //»¬¶¯°´Å¥
-				startVal: 0,			//³õÊ¼Öµ
-				maxVal: 100,            //×î´óÖµ
-				minVal: 0,				//×îĞ¡Öµ
-				stepVal: 1,				//²½³¤Öµ
-				range: "",				//Ñ¡ÔñµÄ·¶Î§ min,max,""
-				animate: false,			//¶¯»­Ğ§¹û
-				direction: true,		//ÊÇ·ñË®Æ½·½Ïò
+				// btnID: "sliderControl", //æ»‘åŠ¨æŒ‰é’®
+				// rangeID: "sliderControl", //æ»‘åŠ¨æŒ‰é’®
+				startVal: 0,			//åˆå§‹å€¼
+				maxVal: 100,            //æœ€å¤§å€¼
+				minVal: 0,				//æœ€å°å€¼
+				stepVal: 1,				//æ­¥é•¿å€¼
+				range: "",				//é€‰æ‹©çš„èŒƒå›´ min,max,""
+				animate: false,			//åŠ¨ç”»æ•ˆæœ
+				direction: true,		//æ˜¯å¦æ°´å¹³æ–¹å‘
 				mode: "outside",		//outside,inside
 				tip: "",
 
-				onStartFun: null,		//ÒÆ¶¯¿ªÊ¼Ê±Ö´ĞĞº¯Êı
-				onEndFun: null,			//ÒÆ¶¯½áÊøÊ±Ö´ĞĞº¯Êı
-				onMoveFun: null,		//ÒÆ¶¯Ê±Ö´ĞĞº¯Êı
-				onSlideFun: null		//Ê±Ö´ĞĞº¯Êı
+				onStartFun: null,		//ç§»åŠ¨å¼€å§‹æ—¶æ‰§è¡Œå‡½æ•°
+				onEndFun: null,			//ç§»åŠ¨ç»“æŸæ—¶æ‰§è¡Œå‡½æ•°
+				onMoveFun: null,		//ç§»åŠ¨æ—¶æ‰§è¡Œå‡½æ•°
+				onSlideFun: null		//æ—¶æ‰§è¡Œå‡½æ•°
 			}, options);
 			// for (i in options) this.options[i] = options[i];
 			var btn = $(this).find("a"),
 			shade, tip, offSeat = 0,
 			that = this,
-			offset = init.direction ? this.offset().left : this.offset().top,	//µ±Ç°ÊÓ¿ÚµÄÏà¶ÔÆ«ÒÆ
-			size = init.direction ? this.width() : this.height(),				//barµÄ¿í¸ß£¨ÒÆ¶¯·¶Î§£©
-			btnWidth = init.direction ? btn.width() : btn.height(),				//btnµÄ¿í¸ß
+			offset = init.direction ? this.offset().left : this.offset().top,	//å½“å‰è§†å£çš„ç›¸å¯¹åç§»
+			size = init.direction ? this.width() : this.height(),				//barçš„å®½é«˜ï¼ˆç§»åŠ¨èŒƒå›´ï¼‰
+			btnWidth = init.direction ? btn.width() : btn.height(),				//btnçš„å®½é«˜
 			size = init.mode == "outside" ? size : size - btnWidth,
-			part = size / ( init.maxVal - init.minVal ),						//Ã¿·İÖµ
+			part = size / ( init.maxVal - init.minVal ),						//æ¯ä»½å€¼
 			htmlVal = init.startVal;
 
 			if(init.range != "") shade = $(that).find(" > div").eq(0);
@@ -134,14 +134,14 @@
 							var partVal = methods.setAlignValue(init.minVal);
 							methods.setStartVal(partVal);
 							break;
-						case 37: 	//×ó
-						case 40: 	//ÏÂ
+						case 37: 	//å·¦
+						case 40: 	//ä¸‹
 							e.preventDefault();
 							var partVal = methods.setAlignValue(htmlVal - init.stepVal);
 							methods.setStartVal(partVal);
 							break;
-						case 39: 	//ÓÒ
-						case 38: 	//ÉÏ
+						case 39: 	//å³
+						case 38: 	//ä¸Š
 							e.preventDefault();
 							var partVal = methods.setAlignValue(htmlVal + init.stepVal);
 							methods.setStartVal(partVal);
@@ -169,51 +169,51 @@
 			// return method.call(this);
 		}
 	})(jQuery);
-	var sb1 = $("#sildebar").slideBar({ //ÄãµÄsb
-		startVal: 15,			//³õÊ¼Öµ
-		maxVal: 50,             //×î´óÖµ
-		minVal: 0,				//×îĞ¡Öµ
-		stepVal: 5,				//²½³¤Öµ
-		range: "min",				//Ñ¡ÔñµÄ·¶Î§ min,max,""
-		animate: true,			//¶¯»­Ğ§¹û
-		direction: true,			//ÊÇ·ñË®Æ½·½Ïò
+	var sb1 = $("#sildebar").slideBar({ //ä½ çš„sb
+		startVal: 15,			//åˆå§‹å€¼
+		maxVal: 50,             //æœ€å¤§å€¼
+		minVal: 0,				//æœ€å°å€¼
+		stepVal: 5,				//æ­¥é•¿å€¼
+		range: "min",				//é€‰æ‹©çš„èŒƒå›´ min,max,""
+		animate: true,			//åŠ¨ç”»æ•ˆæœ
+		direction: true,			//æ˜¯å¦æ°´å¹³æ–¹å‘
 
 		onMoveFun: function(val){
-			if(val == this.maxVal) console.log("×î´óÖµÅ¶£¡");
-			if(val == this.minVal) console.log("×îĞ¡ÖµÅ¶£¡");
+			if(val == this.maxVal) console.log("æœ€å¤§å€¼å“¦ï¼");
+			if(val == this.minVal) console.log("æœ€å°å€¼å“¦ï¼");
 		},
 		onSlideFun: function(val){
 			var percent = Math.round(val * (100 / this.maxVal));
 			$("#id_test").html(val + "--" + percent +"%");
 		}
 	});
-	var sb2 = $("#slidebar2").slideBar({ //ÄãµÄsb
-		startVal: 3,			//³õÊ¼Öµ
-		maxVal: 15,             //×î´óÖµ
-		minVal: 3,				//×îĞ¡Öµ
-		stepVal: 1,				//²½³¤Öµ
-		range: "max",				//Ñ¡ÔñµÄ·¶Î§ min,max,""
-		// animate: true,			//¶¯»­Ğ§¹û
-		direction: true,			//ÊÇ·ñË®Æ½·½Ïò
+	var sb2 = $("#slidebar2").slideBar({ //ä½ çš„sb
+		startVal: 3,			//åˆå§‹å€¼
+		maxVal: 15,             //æœ€å¤§å€¼
+		minVal: 3,				//æœ€å°å€¼
+		stepVal: 1,				//æ­¥é•¿å€¼
+		range: "max",				//é€‰æ‹©çš„èŒƒå›´ min,max,""
+		// animate: true,			//åŠ¨ç”»æ•ˆæœ
+		direction: true,			//æ˜¯å¦æ°´å¹³æ–¹å‘
 		mode: "inside",
 
 		onMoveFun: function(val){
-			if(val == this.maxVal) console.log("×î´óÖµÅ¶£¡");
-			if(val == this.minVal) console.log("×îĞ¡ÖµÅ¶£¡");
+			if(val == this.maxVal) console.log("æœ€å¤§å€¼å“¦ï¼");
+			if(val == this.minVal) console.log("æœ€å°å€¼å“¦ï¼");
 		},
 		onSlideFun: function(val){
 			var percent = Math.round(( val - this.minVal ) * (100 / (this.maxVal - this.minVal )));
 			$("#id_test2").html(val + "--" + percent +"%");
 		}
 	});
-	var sb3 = $("#slidebar3").slideBar({ //ÄãµÄsb
-		startVal: 26,			//³õÊ¼Öµ
-		maxVal: 100,             //×î´óÖµ
-		minVal: 0,				//×îĞ¡Öµ
-		stepVal: 1,				//²½³¤Öµ
-		range: "max",				//Ñ¡ÔñµÄ·¶Î§ min,max,""
-		//animate: true,			//¶¯»­Ğ§¹û
-		direction: false,			//ÊÇ·ñË®Æ½·½Ïò
+	var sb3 = $("#slidebar3").slideBar({ //ä½ çš„sb
+		startVal: 26,			//åˆå§‹å€¼
+		maxVal: 100,             //æœ€å¤§å€¼
+		minVal: 0,				//æœ€å°å€¼
+		stepVal: 1,				//æ­¥é•¿å€¼
+		range: "max",				//é€‰æ‹©çš„èŒƒå›´ min,max,""
+		//animate: true,			//åŠ¨ç”»æ•ˆæœ
+		direction: false,			//æ˜¯å¦æ°´å¹³æ–¹å‘
 		tip: "yes",
 
 		onStartFun: function(){
@@ -225,8 +225,8 @@
 			// },2000)
 		},
 		onMoveFun: function(val){
-			if(val == this.maxVal) console.log("×î´óÖµÅ¶£¡");
-			if(val == this.minVal) console.log("×îĞ¡ÖµÅ¶£¡");
+			if(val == this.maxVal) console.log("æœ€å¤§å€¼å“¦ï¼");
+			if(val == this.minVal) console.log("æœ€å°å€¼å“¦ï¼");
 		},
 		onSlideFun: function(val){
 			var percent = Math.round(val * (100 / this.maxVal));
@@ -234,14 +234,14 @@
 			$("#slidebar3 .ttContent").html(percent +"%");
 		}
 	});
-	var sb4 = $("#slidebar4").slideBar({ //ÄãµÄsb
-		startVal: 26,			//³õÊ¼Öµ
-		maxVal: 100,             //×î´óÖµ
-		minVal: 0,				//×îĞ¡Öµ
-		stepVal: 1,				//²½³¤Öµ
-		range: "min",				//Ñ¡ÔñµÄ·¶Î§ min,max,""
-		animate: true,			//¶¯»­Ğ§¹û
-		direction: false,			//ÊÇ·ñË®Æ½·½Ïò
+	var sb4 = $("#slidebar4").slideBar({ //ä½ çš„sb
+		startVal: 26,			//åˆå§‹å€¼
+		maxVal: 100,             //æœ€å¤§å€¼
+		minVal: 0,				//æœ€å°å€¼
+		stepVal: 1,				//æ­¥é•¿å€¼
+		range: "min",				//é€‰æ‹©çš„èŒƒå›´ min,max,""
+		animate: true,			//åŠ¨ç”»æ•ˆæœ
+		direction: false,			//æ˜¯å¦æ°´å¹³æ–¹å‘
 		tip: "yes",
 
 		onStartFun: function(){
@@ -253,8 +253,8 @@
 			},2000)
 		},
 		onMoveFun: function(val){
-			if(val == this.maxVal) console.log("×î´óÖµÅ¶£¡");
-			if(val == this.minVal) console.log("×îĞ¡ÖµÅ¶£¡");
+			if(val == this.maxVal) console.log("æœ€å¤§å€¼å“¦ï¼");
+			if(val == this.minVal) console.log("æœ€å°å€¼å“¦ï¼");
 		},
 		onSlideFun: function(val){
 			var percent = Math.round(val * (100 / this.maxVal));
@@ -262,14 +262,14 @@
 			$("#slidebar4 .ttContent").html(percent +"%");
 		}
 	});
-	var sb5 = $("#slidebar5").slideBar({ //ÄãµÄsb
-		startVal: 0,			//³õÊ¼Öµ
-		maxVal: 100,             //×î´óÖµ
-		minVal: 0,				//×îĞ¡Öµ
-		stepVal: 1,				//²½³¤Öµ
-		range: "min",				//Ñ¡ÔñµÄ·¶Î§ min,max,""
-		// animate: true,			//¶¯»­Ğ§¹û
-		direction: false,			//ÊÇ·ñË®Æ½·½Ïò
+	var sb5 = $("#slidebar5").slideBar({ //ä½ çš„sb
+		startVal: 0,			//åˆå§‹å€¼
+		maxVal: 100,             //æœ€å¤§å€¼
+		minVal: 0,				//æœ€å°å€¼
+		stepVal: 1,				//æ­¥é•¿å€¼
+		range: "min",				//é€‰æ‹©çš„èŒƒå›´ min,max,""
+		// animate: true,			//åŠ¨ç”»æ•ˆæœ
+		direction: false,			//æ˜¯å¦æ°´å¹³æ–¹å‘
 		tip: "yes",
 		mode: "inside",
 
@@ -287,8 +287,8 @@
 			hval = (100 - val) * (seat / this.maxVal);
 			$("#scroll-content").css("top",-hval);
 			// console.log()
-			if(val == this.maxVal) console.log("×î´óÖµÅ¶£¡");
-			if(val == this.minVal) console.log("×îĞ¡ÖµÅ¶£¡");
+			if(val == this.maxVal) console.log("æœ€å¤§å€¼å“¦ï¼");
+			if(val == this.minVal) console.log("æœ€å°å€¼å“¦ï¼");
 		},
 		onSlideFun: function(val){
 			var percent = Math.round(val * (100 / this.maxVal));
